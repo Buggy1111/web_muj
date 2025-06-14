@@ -183,10 +183,15 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('a[href^="http"]').forEach(link => {
-    if (!link.href.includes(window.location.hostname)) {
-      link.setAttribute('target', '_blank');
-      link.setAttribute('rel', 'noopener');
+  const svg = `
+    <svg width="18" height="18" viewBox="0 0 20 20" style="vertical-align:-3px;margin-left:7px;" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 3H17C17.55 3 18 3.45 18 4V17C18 17.55 17.55 18 17 18H4C3.45 18 3 17.55 3 17V4C3 3.45 3.45 3 4 3H7" stroke="#d8a44d" stroke-width="1.4"/>
+      <path d="M8 9L17 3M17 3V7M17 3H13" stroke="#d8a44d" stroke-width="1.4"/>
+    </svg>`;
+  document.querySelectorAll('a[target="_blank"]').forEach(link => {
+    if (!link.innerHTML.includes('svg')) {
+      link.innerHTML += svg;
+      link.title = "Otevře se v nové záložce";
     }
   });
 });
