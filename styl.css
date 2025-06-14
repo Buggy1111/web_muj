@@ -1394,10 +1394,10 @@ body.dark #dark-toggle {
   }
 }
 
-.scroll-top-btn {
+#scroll-top-btn {
   position: fixed;
-  left: 22px;
-  bottom: 90px;
+  left: 18px;          /* nebo 8px podle designu */
+  bottom: 18px;        /* 8px = úplně na kraj, nebo 18px kvůli mezeře */
   z-index: 1200;
   background: none;
   border: none;
@@ -1433,3 +1433,43 @@ body.dark #dark-toggle {
         overflow-y: auto !important;
     }
 }
+
+
+.qr-phone {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  z-index: 1200;
+  /* background: none;  -- pozor, nesmí být barva ani border! */
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  animation: qr-breath 2.2s infinite cubic-bezier(.68,.09,.13,.94);
+  transition: transform 0.33s cubic-bezier(.22, .61, .36, 1), box-shadow 0.33s;
+  cursor: pointer;
+}
+.qr-phone img {
+  width: 92px;
+  height: 92px;
+  display: block;
+  background: transparent;
+  pointer-events: none;
+}
+
+@keyframes qr-breath {
+  0% { filter: drop-shadow(0 0 0px #ffd76b50); transform: scale(1);}
+  60% { filter: drop-shadow(0 0 18px #ffd76b85); transform: scale(1.06);}
+  100% { filter: drop-shadow(0 0 0px #ffd76b50); transform: scale(1);}
+}
+.qr-phone:hover {
+  animation: none;
+  transform: scale(2.2); /* zvětšení až na 200 % */
+  filter: drop-shadow(0 0 28px #ffd76bcc);
+  z-index: 9999;
+}
+@media (max-width: 700px) {
+  .qr-phone {
+    display: none !important;
+  }
+}
+

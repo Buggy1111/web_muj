@@ -110,24 +110,29 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-  const btn = document.getElementById('dark-toggle');
   const darkClass = 'dark';
-  // Pamatovat si režim v localStorage
-  if(localStorage.getItem('darkmode') === '1') {
-    document.body.classList.add(darkClass);
-    btn.textContent = '☀️ Světlý režim';
+
+  function isNight() {
+    const now = new Date();
+    const h = now.getHours();
+    return (h >= 19 || h < 6); // noc = 19:00–5:59
   }
-  btn.addEventListener('click', function() {
-    document.body.classList.toggle(darkClass);
-    if(document.body.classList.contains(darkClass)) {
-      btn.textContent = '☀️ Světlý režim';
-      localStorage.setItem('darkmode', '1');
+
+  function applyAutoTheme() {
+    if (isNight()) {
+      document.body.classList.add(darkClass);
     } else {
-      btn.textContent = '🌙 Noční režim';
-      localStorage.setItem('darkmode', '0');
+      document.body.classList.remove(darkClass);
     }
-  });
+  }
+
+  // Nastav režim při načtení stránky
+  applyAutoTheme();
+
+  // Kontroluj každých 5 minut, jestli se nezměnil čas režimu
+  setInterval(applyAutoTheme, 5 * 60 * 1000);
 });
+
 
 document.addEventListener('DOMContentLoaded', function() {
   const menuToggle = document.getElementById('menu-toggle');
