@@ -195,3 +195,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+document.querySelectorAll('.portfolio-card a[target="_blank"]').forEach(link => {
+  if (!link.innerHTML.includes('svg')) {
+    link.innerHTML += svg;
+    link.title = "Otevře se v nové záložce";
+  }
+});
+
