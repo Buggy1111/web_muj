@@ -181,3 +181,12 @@ document.addEventListener('DOMContentLoaded', function() {
     window.scrollTo({top: 0, behavior: 'smooth'});
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('a[href^="http"]').forEach(link => {
+    if (!link.href.includes(window.location.hostname)) {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener');
+    }
+  });
+});
