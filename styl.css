@@ -1600,3 +1600,71 @@ body { padding-top: 46px; } /* Aby hero nezačínal pod lištou */
   animation: info-ticker-move 26s linear infinite;
   animation-delay: -5s;  /* <-- Přidat záporné zpoždění! */
 }
+
+.info-ticker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 3000;
+  background: rgba(255, 255, 255, 0.38);
+  box-shadow: 0 6px 32px #ffd76b33;
+  backdrop-filter: blur(9px) saturate(120%);
+  -webkit-backdrop-filter: blur(9px) saturate(120%);
+  color: #1e2340;
+  font-family: 'Lora', serif;
+  font-weight: 700;
+  font-size: 1.05em;
+  padding: 8px 0 7px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1.5px solid #ffd76b80;
+}
+
+body.dark .info-ticker {
+  background: linear-gradient(90deg, #181c2a 10%, #25356b 100%);
+  color: #ffd76b;
+  box-shadow: 0 8px 28px #ffd76b33;
+  border-bottom: 1.7px solid #ffd76b33;
+}
+
+.info-ticker {
+  background: linear-gradient(92deg, #fffbe8 0%, #ffd76b 100%);
+  color: #1e2340;
+  font-size: 1.09em;
+  font-weight: 700;
+  border-bottom: 2.5px solid #ffd76b42;
+  box-shadow: 0 5px 24px #ffd76b22;
+}
+
+.info-ticker {
+  background: #fffbe8;
+  color: #d8a44d;
+  font-size: 1em;
+  border-bottom: 1px solid #ffd76b;
+  box-shadow: none;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .info-ticker {
+    font-size: 0.86em;
+    padding: 2.5px 0 2.5px 0;
+    min-height: 24px;
+    background: linear-gradient(90deg, #ffd76b 0%, #25356b 100%);
+  }
+  .info-ticker-icon {
+    margin-left: 5px;
+    font-size: 1em;
+  }
+  .info-ticker-close {
+    margin-right: 5px;
+    font-size: 1.08em;
+  }
+  .info-ticker-text {
+    padding-left: 12px;
+    font-size: 0.97em;
+    animation-delay: -2s;
+  }
+}
