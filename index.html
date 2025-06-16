@@ -53,7 +53,30 @@
   <script src="map.js" defer></script>
 </head>
 
+<div class="info-ticker">
+  <span class="info-ticker-icon">🤖</span>
+  <span class="info-ticker-text">
+    📢 Hledáte špičkového AI vývojáře v Moravskoslezském kraji? | 🥇 Master of AI Creativity | 🤖 Chatboty na míru • GPT řešení • Webové aplikace • AI automaty • Python vývoj • Integrace API | 🐍 Pythonista srdcem i duší | Přijímám nové projekty na léto 2025!
+  </span>
+  <button class="info-ticker-close" aria-label="Zavřít lištu" onclick="this.parentElement.style.display='none'">&times;</button>
+</div>
+
+
 <body>
+  <!-- Minimalistické hexagony vlevo v polovině stránky -->
+<div class="lux-hex-group">
+  <svg width="60" height="52" style="position:absolute;top:0;left:0;">
+    <polygon points="30,4 58,18 58,46 30,60 2,46 2,18" fill="#ffd76b" opacity="0.11"/>
+  </svg>
+  <svg width="42" height="38" style="position:absolute;top:40px;left:36px;">
+    <polygon points="21,4 40,14 40,34 21,44 2,34 2,14" fill="#25356b" opacity="0.18"/>
+  </svg>
+  <svg width="32" height="28" style="position:absolute;top:68px;left:4px;">
+    <polygon points="16,2 30,10 30,22 16,30 2,22 2,10" fill="#ffd76b" opacity="0.09"/>
+  </svg>
+</div>
+<!-- Luxusní světelný pruh po pravém okraji -->
+<div class="lux-side-stripe"></div>
   <header class="hero">
     <div class="container">
       <h1></p>AI Developer | Python Developer</p>
@@ -334,6 +357,7 @@
     </section>
   </main>
 
+
 <!-- === Navigace (mobilní hamburger menu) === -->
 <nav class="mobile-nav">
   <button id="menu-toggle" aria-label="Otevřít menu">
@@ -390,16 +414,14 @@
     <h3>Chat s asistentem</h3>
     <button id="chat-close" aria-label="Zavřít chat">&times;</button>
   </div>
-  <div id="chat-messages"></div>
+  <div id="chat-messages">
+    <!-- Úvodní zpráva zde, nebo prázdné -->
+  </div>
   <form id="chat-form" autocomplete="off">
     <input type="text" id="chat-input" placeholder="Napiš zprávu..." autocomplete="off" />
     <button type="submit" id="chat-send">Odeslat</button>
   </form>
 </div>
-
-</div>
-
-
 
 
 <!-- === SVG gradienty pro chatbot/ikony === -->

@@ -208,14 +208,16 @@ document.querySelectorAll('.portfolio-card a[target="_blank"]').forEach(link => 
   }
 });
 
-  document.addEventListener("DOMContentLoaded", function() {
-    window.openChat = function() {
-      document.getElementById('chat-window').classList.add('open');
-      document.getElementById('asistent-open').style.display = 'none';
-    };
-    document.getElementById('chat-close').onclick = function() {
-      document.getElementById('chat-window').classList.remove('open');
-      document.getElementById('asistent-open').style.display = '';
-    };
-  });
+document.addEventListener("DOMContentLoaded", function() {
+  window.openChat = function() {
+    document.getElementById('chat-window').classList.add('open');
+    document.getElementById('chat-open').style.display = 'none';
+  };
+  document.getElementById('chat-open').onclick = window.openChat;
+  document.getElementById('chat-close').onclick = function() {
+    document.getElementById('chat-window').classList.remove('open');
+    document.getElementById('chat-open').style.display = '';
+  };
+});
+
 

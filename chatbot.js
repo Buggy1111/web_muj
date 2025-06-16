@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         if (!chatWin.classList.contains('open')) {
             chatWin.classList.add('open');
-            sendBot("Dobrý den, s čím Vám mohu pomoci?");
+            sendBot("Ahoj! Piš, co tě napadne – žádná otázka není hloupá. Odpovím ti rychle a lidsky");
         }
-    }, 5000);
+    }, 2000);
 });

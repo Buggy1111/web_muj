@@ -1495,3 +1495,100 @@ body.dark #dark-toggle {
   }
 }
 
+body.dark .contact-card-premium,
+body.dark .about-premium-box {
+  background: #232b45 !important;
+  color: #ffd76b !important;
+  box-shadow: 0 4px 22px #ffd76b22, 0 2px 8px #1e234012;
+  border: 2.7px solid #ffd76b;
+}
+body.dark .contact-name,
+body.dark .cert-modal-title,
+body.dark .contact-link {
+  color: #ffd76b !important;
+}
+body.dark .motto-box {
+  background: #232b45 !important;
+  color: #ffd76b !important;
+  box-shadow: 0 2px 24px #ffd76b22;
+}
+body.dark .motto-text {
+  color: #ffd76b !important;
+  font-weight: 700;
+}
+
+.chat-msg.user .bubble {
+  background: linear-gradient(90deg, #ffd76b 50%, #d8a44d 100%);
+}
+
+.info-ticker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 3000;
+  background: linear-gradient(90deg, #ffd76b 0%, #25356b 90%);
+  color: #1e2340;
+  font-family: 'Lora', serif;
+  font-weight: 700;
+  font-size: 1.07em;
+  box-shadow: 0 6px 32px #ffd76b44;
+  padding: 7px 0 6px 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 36px;
+  letter-spacing: 0.04em;
+  user-select: none;
+  animation: slideDownTicker 0.85s cubic-bezier(.47,1.64,.41,.8);
+}
+
+@keyframes slideDownTicker {
+  from { transform: translateY(-60px); opacity: 0;}
+  to   { transform: translateY(0); opacity: 1;}
+}
+
+.info-ticker-icon {
+  margin-left: 26px;
+  font-size: 1.22em;
+  color: #25356b;
+  flex: none;
+}
+
+.info-ticker-text {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 22px;
+  animation: info-ticker-move 26s linear infinite;
+  font-size: 1em;
+}
+@keyframes info-ticker-move {
+  0% { transform: translateX(100%);}
+  100% { transform: translateX(-110%);}
+}
+
+.info-ticker-close {
+  background: none;
+  border: none;
+  color: #25356b;
+  font-size: 1.28em;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 26px;
+  margin-left: 18px;
+  opacity: 0.63;
+  transition: color 0.19s, opacity 0.19s;
+  align-self: flex-end;
+}
+.info-ticker-close:hover { color: #d12e2e; opacity: 1; }
+
+body { padding-top: 46px; } /* Aby hero nezačínal pod lištou */
+@media (max-width: 600px) {
+  .info-ticker { font-size: 0.92em; padding: 5px 0 3px 0; min-height: 27px;}
+  .info-ticker-icon { margin-left: 8px;}
+  .info-ticker-close { margin-right: 8px; }
+  body { padding-top: 32px; }
+}
+
+
