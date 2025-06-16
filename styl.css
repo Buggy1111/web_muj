@@ -1591,4 +1591,12 @@ body { padding-top: 46px; } /* Aby hero nezačínal pod lištou */
   body { padding-top: 32px; }
 }
 
-
+.info-ticker-text {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 22px;
+  /* původní animace byla: */
+  /* animation: info-ticker-move 26s linear infinite; */
+  animation: info-ticker-move 26s linear infinite;
+  animation-delay: -5s;  /* <-- Přidat záporné zpoždění! */
+}
